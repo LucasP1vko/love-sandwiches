@@ -21,22 +21,28 @@ SHEET = GSPREAD_CLIENT.open('love_sandwiches')
 # 3 lines above check if our data from google sheet is printed
 
 def get_sales_data():
-    """.git/Get sales figures from the user
     """
-    print("Please enter sales data from the last market.")
-    print("Data should be six numbers, separated by commas.")
-    print("Example: 10,20,30,40,50,60\n")
+    Get sales figures from the user
+    """
+    while True:            
+        print("Please enter sales data from the last market.")
+        print("Data should be six numbers, separated by commas.")
+        print("Example: 10,20,30,40,50,60\n")
 
-    # data_str = input("Enter your data here: ")
-    # print(f"The data provided is {data_str}")
-    #input before checking for data format
+        # data_str = input("Enter your data here: ")
+        # print(f"The data provided is {data_str}")
+        #input before checking for data format
 
-    data_str = input("Enter your data here: ")
+        data_str = input("Enter your data here: ")
 
-    sales_data = data_str.split(",")
-    # print(sales_data)
-    # checking get_sales_data print before adding validate_data function
-    validate_data(sales_data)
+        sales_data = data_str.split(",")
+        # print(sales_data)
+        # checking get_sales_data print before adding validate_data function
+        validate_data(sales_data)
+
+        if validate_data(sales_data):
+            print("Data is valid!")
+            break
 
 def validate_data(values):
 
@@ -54,8 +60,10 @@ def validate_data(values):
             )
     except ValueError as e:
         print(f"Invalid data: {e}, please try again.\n")
+        return False
+    return True
 
-
+data = get_sales_data()
 
 
 get_sales_data()
