@@ -66,26 +66,26 @@ def update_sales_worksheet(data):
     print("Sales worksheet updated successfully.\n")
 
 
-def update_surplus_worksheet(surplus_calculated):
-    """
-    Update surplus worksheet, add new row with the calculated surplus data
-    """
-    print("Updating surplus worksheet...\n")
-    surplus_worksheet = SHEET.worksheet("surplus")
-    surplus_worksheet.append_row(surplus_calculated)
-    print("Surplus worksheet updated successfully.\n")
+# def update_surplus_worksheet(surplus_calculated):
+#     """
+#     Update surplus worksheet, add new row with the calculated surplus data
+#     """
+#     print("Updating surplus worksheet...\n")
+#     surplus_worksheet = SHEET.worksheet("surplus")
+#     surplus_worksheet.append_row(surplus_calculated)
+#     print("Surplus worksheet updated successfully.\n")
 
-def update_worksheet(data, worksheet):
-    """
-    Recieves a a list of integers to bo inserted into a worksheet
-    update the relevant worksheet with the data provided
-    """
-    print(f"Updating {worksheet} worksheet...\n")
-    surplus_worksheet = SHEET.worksheet(worksheet)
-    surplus_worksheet.append_row(data)
-    print(f"{worksheet} worksheet updated successfully.\n")
+# def update_worksheet(data, worksheet):
+#     """
+#     Recieves a a list of integers to bo inserted into a worksheet
+#     update the relevant worksheet with the data provided
+#     """
+#     print(f"Updating {worksheet} worksheet...\n")
+#     surplus_worksheet = SHEET.worksheet(worksheet)
+#     surplus_worksheet.append_row(data)
+#     print(f"{worksheet} worksheet updated successfully.\n")
 
-
+# Two above functions were refactored into one below
 
 def calculate_surplus_data(sales_row):
     """
