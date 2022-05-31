@@ -181,9 +181,9 @@ stock_data = main()
 
 # student writes function
 def get_stock_values(data):
-    """
-    Print out the calculated stock numbers for each sandwich type.
-    """
+    
+    #Print out the calculated stock numbers for each sandwich type.
+    
     headings = SHEET.worksheet("stock").get_all_values()[0]
 
     # headings = SHEET.worksheet('stock').row_values(1)
